@@ -13,7 +13,6 @@ class TodolistsController < ApplicationController
   
   def index
     @lists = List.all
-    p "標準出力にのみ反映"
     logger.debug("標準出力とログファイルに記録される")
   end
   

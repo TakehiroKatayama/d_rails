@@ -11,6 +11,8 @@ class TodolistsController < ApplicationController
   
   def index
     @lists = List.all
+    p "標準出力にのみ反映"
+    logger.debug("標準出力とログファイルに記録される")
   end
   
   def show
@@ -31,7 +33,7 @@ class TodolistsController < ApplicationController
     list = List.find(params[:id])
     list.destroy
     redirect_to todolist_path
-    
+  end
   
   private
   def list_params

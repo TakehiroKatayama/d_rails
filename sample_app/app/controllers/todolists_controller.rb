@@ -5,6 +5,8 @@ class TodolistsController < ApplicationController
   
   def create
     list = List.new(list_params)
+    binding.pry
+    
     list.save
     redirect_to todolist_path(list.id)
   end
